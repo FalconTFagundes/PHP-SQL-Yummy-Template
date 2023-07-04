@@ -32,7 +32,7 @@ foreach($listar_chef as $item_chef){
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="chef-member">
               <div class="member-img"><!-- img chef -->
-                <img src=<?php echo $img_chef; ?> class="img-fluid" alt=""> <!-- chef1 -->
+                <img src=./assets/img/professionals/<?php echo $img_chef; ?> class="img-fluid" alt=""> <!-- chef1 -->
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>

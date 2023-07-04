@@ -11,7 +11,7 @@ foreach ($listar_titulo_cardapio as $item_titulo_menu) {
 
         <div class="section-header">
             <h2><?php echo $titulo1_cardapio; ?></h2>
-            <p><?php echo $titulo2_cardapio; ?><span><?php echo $titulo3_cardapio; ?></span></p>
+            <p><?php echo $titulo2_cardapio; ?><span> <?php echo $titulo3_cardapio; ?></span></p>
         </div>
 
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -21,8 +21,6 @@ foreach ($listar_titulo_cardapio as $item_titulo_menu) {
             foreach ($listar_categoria_cardapio as $item_categoria_cardapio) {
                 $idcategorias = $item_categoria_cardapio->idcategorias;
                 $categoriaMenu = $item_categoria_cardapio->categoria;
-                $hamburguer = $item_categoria_cardapio->categoria;
-
             ?>
 
                 <li class="nav-item">
@@ -33,23 +31,6 @@ foreach ($listar_titulo_cardapio as $item_titulo_menu) {
             <?php
             }
             ?>
-            <!-- <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-              <h4>Breakfast</h4>
-            </a>
-        </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-              <h4>Lunch</h4>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
-              <h4>Dinner</h4>
-            </a>
-          </li> -->
-
         </ul>
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
@@ -61,7 +42,7 @@ foreach ($listar_titulo_cardapio as $item_titulo_menu) {
                 <div class="tab-pane fade show" id="menu-<?php echo $idcategorias2; ?>">
 
                     <div class="tab-header text-center">
-                        <p>Menu luciano</p>
+                        <p>Menu</p>
                         <h3><?php echo $categoriaMenu2; ?></h3>
                     </div>
 
@@ -71,14 +52,14 @@ foreach ($listar_titulo_cardapio as $item_titulo_menu) {
                         if ($listarProdMenu != 'Vazio') {
                             foreach ($listarProdMenu as $listarProdMenuItem) {
                                 $idcardapio = $listarProdMenuItem->idcardapio;
-                                $img = $listarProdMenuItem->img;
+                                $img_menu = $listarProdMenuItem->img;
                                 $titulo = $listarProdMenuItem->titulo;
                                 $descricao = $listarProdMenuItem->descricao;
                                 $valor = $listarProdMenuItem->valor;
 
                         ?>
                                 <div class="col-lg-4 menu-item">
-                                    <a href="assets/img/menu/<?php echo $img; ?>" class="glightbox"><img src="assets/img/menu/<?php echo $img; ?>" class="menu-img img-fluid" alt=""></a>
+                                    <a href="./assets/img/cardapio/<?php echo $img_menu; ?>" class="glightbox"><img src="./assets/img/cardapio/<?php echo $img_menu; ?>" class="menu-img img-fluid" alt=""></a>
                                     <h4><?php echo $titulo; ?></h4>
                                     <p class="ingredients">
                                         <?php echo $descricao; ?>
@@ -94,8 +75,9 @@ foreach ($listar_titulo_cardapio as $item_titulo_menu) {
 
                     </div>
                 </div>
-        </div>
-    <?php
+                <?php
             }
     ?>
+        </div>
+   
 </section>

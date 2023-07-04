@@ -35,7 +35,7 @@ foreach($listar_menu as $item_depoimento){
   $nome = $item_depoimento -> nome;
   $cargo = $item_depoimento -> cargo;
   $estrelas = $item_depoimento -> estrelas;
-  $img = $item_depoimento -> img;
+  $img_depoimento = $item_depoimento -> img;
 
 
 
@@ -57,7 +57,7 @@ foreach($listar_menu as $item_depoimento){
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src= <?php echo $img ; ?> class="img-fluid testimonial-img" alt="">
+                    <img src=./assets/img/testimonials/<?php echo $img_depoimento; ?> class="img-fluid testimonial-img" alt="">
                   </div>
                 </div>
              

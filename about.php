@@ -27,7 +27,7 @@ $tel = $item -> telefone;
         </div>
 
         <div class="row gy-4">
-          <div class="col-lg-7 position-relative about-img" style="background-image: url(<?php echo $img_about; ?>)" data-aos="fade-up" data-aos-delay="150">
+          <div class="col-lg-7 position-relative about-img" style="background-image: url(./assets/img/about/<?php echo $img_about; ?>)" data-aos="fade-up" data-aos-delay="150">
             <div class="call-us position-absolute">
               <h4><?php echo $msgcontato; ?></h4>
               <p><?php echo $tel; ?></p>
@@ -48,7 +48,7 @@ $tel = $item -> telefone;
               </p>
 
               <div class="position-relative mt-4">
-                <img src="<?php echo $img_video; ?>" class="img-fluid" alt="">
+                <img src="./assets/img/about/<?php echo $img_video; ?>" class="img-fluid" alt="">
                 <a href=<?php echo $video_about; ?> class="glightbox play-btn"></a>
               </div>
             </div>

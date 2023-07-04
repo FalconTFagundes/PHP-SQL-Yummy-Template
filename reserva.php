@@ -22,7 +22,7 @@ foreach ($listar_titulo_reserva as $item_titulo_reserva) {
         </div>
 
         <div class="row g-0">
-            <div class="col-lg-4 reservation-img" style="background-image: url(<?php echo $img_reserva; ?>);" data-aos="zoom-out" data-aos-delay="200"></div>
+            <div class="col-lg-4 reservation-img" style="background-image: url(./assets/img/reserva/<?php echo $img_reserva; ?>);" data-aos="zoom-out" data-aos-delay="200"></div>
 
             <div class="col-lg-8 d-flex align-items-center">
                 <form action="" method="POST" role="form" class="rafaelFrm" data-aos="fade-up" id="faelStyle">
@@ -92,6 +92,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) &&
 
 
 } else {
-    echo "Vazio";
+
 }
 ?>

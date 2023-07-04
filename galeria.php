@@ -26,7 +26,7 @@ foreach($listar_titulo_galeria as $item_titulo_galeria){
           $img_galeria = $item_galeria -> img;
         
       ?>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="<?php echo $img_galeria; ?>"><img src="<?php echo $img_galeria; ?>" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="./assets/img/gallery/<?php echo $img_galeria; ?>"><img src="./assets/img/gallery/<?php echo $img_galeria; ?>" class="img-fluid" alt=""></a></div>
            
             <?php } ?>
           </div>
@@ -36,4 +36,4 @@ foreach($listar_titulo_galeria as $item_titulo_galeria){
         </div>
 
       </div>
-    </section><!-- End Gallery Section -->
+    </section>

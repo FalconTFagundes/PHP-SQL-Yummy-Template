@@ -29,14 +29,14 @@ $preco_eventos = $item_eventos -> preco;
 $descricao_eventos = $item_eventos -> descricao;
 
 ?>
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(<?php echo $img_eventos; ?>)">
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url(./assets/img/events/<?php echo $img_eventos; ?>)">
               <h3><?php echo $titulo_eventos; ?></h3>
               <div class="price align-self-start"><?php echo $preco_eventos;?></div>
               <p class="description">
                 <?php echo $descricao_eventos; ?>
               </p>
         
-            </div><!-- End Event item -->
+            </div>
             <?php } ?>
 
           </div>
@@ -44,4 +44,4 @@ $descricao_eventos = $item_eventos -> descricao;
         </div>
 
       </div>
-    </section><!-- End Events Section -->
+    </section>
