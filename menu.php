@@ -1,151 +1,101 @@
-<?php 
-$listar_menu = listarTodosRegistros('titulocardapio','idtitulocardapio, titulo1, titulo2, titulo3, cadastro, alteracao, ativo','A');
-foreach($listar_menu as $item_menu){
-
-  $titulopequeno = $item_menu -> titulo1;
-  $tituloparte_1 = $item_menu -> titulo2;
-  $tituloparte_2 = $item_menu -> titulo3;
+<?php
+$listar_titulo_cardapio = listarTodosRegistros('titulocardapio', 'idtitulocardapio, titulo1, titulo2, titulo3, cadastro, alteracao, ativo', 'A');
+foreach ($listar_titulo_cardapio as $item_titulo_menu) {
+    $titulo1_cardapio = $item_titulo_menu->titulo1;
+    $titulo2_cardapio = $item_titulo_menu->titulo2;
+    $titulo3_cardapio = $item_titulo_menu->titulo3;
 }
-
 ?>
-
 <section id="menu" class="menu">
-      <div class="container" data-aos="fade-up">
+    <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2><?php echo $titulopequeno; ?></h2>
-          <p><?php echo $tituloparte_1; ?> <span><?php echo $tituloparte_2; ?> </span></p>
+            <h2><?php echo $titulo1_cardapio; ?></h2>
+            <p><?php echo $titulo2_cardapio; ?><span><?php echo $titulo3_cardapio; ?></span></p>
         </div>
 
-<?php 
-$listar_categoria = listarTodosRegistros('categorias','idcategorias, categoria, cadastro, alteracao, ativo','A');
-foreach($listar_categoria as $item_categorias){
-  $categoria = $item_categorias -> categoria;
-}
-?>
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-<?php echo $categoria; ?>">
-              <h4><?php echo $categoria; ?></h4>
+
+            <?php
+            $listar_categoria_cardapio = listarTodosRegistros('categorias', 'idcategorias, categoria, cadastro, alteracao, ativo', 'A');
+            foreach ($listar_categoria_cardapio as $item_categoria_cardapio) {
+                $idcategorias = $item_categoria_cardapio->idcategorias;
+                $categoriaMenu = $item_categoria_cardapio->categoria;
+                $hamburguer = $item_categoria_cardapio->categoria;
+
+            ?>
+
+                <li class="nav-item">
+                    <a class="nav-link show" data-bs-toggle="tab" data-bs-target="#menu-<?php echo $idcategorias; ?>">
+                        <h4><?php echo $categoriaMenu; ?></h4>
+                    </a>
+                </li>
+            <?php
+            }
+            ?>
+            <!-- <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+              <h4>Breakfast</h4>
             </a>
-          </li><!-- End tab nav item -->
-   
-<?php 
-
-$listar_categoria2 = listarTodosRegistros('categorias','idcategorias, categoria, cadastro, alteracao, ativo','A');
-foreach($listar_categoria2 as $item_categorias2){
-  $categoria2 = $item_categorias2 -> categoria;
-
-?>
+        </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-<?php echo $categoria2;?>">
-              <h4><?php echo $categoria2; ?></h4>
-            </a><!-- End tab nav item -->
-            <?php }?>
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+              <h4>Lunch</h4>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
+              <h4>Dinner</h4>
+            </a>
+          </li> -->
+
         </ul>
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+            <?php
+            foreach ($listar_categoria_cardapio as $item_categoria_cardapio2) {
+                $idcategorias2 = $item_categoria_cardapio2->idcategorias;
+                $categoriaMenu2 = $item_categoria_cardapio2->categoria;
+            ?>
+                <div class="tab-pane fade show" id="menu-<?php echo $idcategorias2; ?>">
 
-          <div class="tab-pane fade active show" id="menu-starters">
+                    <div class="tab-header text-center">
+                        <p>Menu luciano</p>
+                        <h3><?php echo $categoriaMenu2; ?></h3>
+                    </div>
 
-            <div class="tab-header text-center">
-              <p>Menu</p>
-              <h3><?php echo $categoria; ?></h3>
-            </div>
+                    <div class="row gy-5">
+                        <?php
+                        $listarProdMenu = listarTodosRegistrosId('cardapio', 'idcardapio, img, titulo, descricao, valor', 'A', 'idcategorias', "$idcategorias2");
+                        if ($listarProdMenu != 'Vazio') {
+                            foreach ($listarProdMenu as $listarProdMenuItem) {
+                                $idcardapio = $listarProdMenuItem->idcardapio;
+                                $img = $listarProdMenuItem->img;
+                                $titulo = $listarProdMenuItem->titulo;
+                                $descricao = $listarProdMenuItem->descricao;
+                                $valor = $listarProdMenuItem->valor;
 
+                        ?>
+                                <div class="col-lg-4 menu-item">
+                                    <a href="assets/img/menu/<?php echo $img; ?>" class="glightbox"><img src="assets/img/menu/<?php echo $img; ?>" class="menu-img img-fluid" alt=""></a>
+                                    <h4><?php echo $titulo; ?></h4>
+                                    <p class="ingredients">
+                                        <?php echo $descricao; ?>
+                                    </p>
+                                    <p class="price">
+                                        <?php echo $valor; ?>
+                                    </p>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
 
-            <div class="row gy-5">
-            <?php 
-$listar_cardapio = listarTodosRegistros('cardapio','idcardapio, idcategorias, img, titulo, descricao, valor, cadastro, alteracao, ativo','A');
-foreach($listar_cardapio as $item_cardapio){
-  $titulo_cardapio = $item_cardapio -> titulo;
-  $descricao_cardapio = $item_cardapio -> descricao;
-  $valor_cardapio = $item_cardapio -> valor;
-  $img_cardapio = $item_cardapio -> img;
-
-
-?>
-              <div class="col-lg-4 menu-item">
-                <a href="<?php echo $img_cardapio;?>" class="glightbox"><img src="<?php echo $img_cardapio; ?>" class="menu-img img-fluid" alt=""></a>
-                <h4><?php echo $titulo_cardapio; ?></h4>
-                <p class="ingredients">
-                  <?php echo $descricao_cardapio;?>
-                </p>
-                <p class="price">
-                  <?php echo $valor_cardapio; ?>
-                </p>
-          
-              </div><!-- Menu Item -->
-              <?php }?>
-
-
-          <div class="tab-pane fade" id="menu-breakfast">
-
-            <div class="tab-header text-center">
-              <p>Menu</p>
-              <h3><?php echo $categoria; ?></h3>
-            </div>
-
-            <div class="row gy-5">
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Magnam Tiste</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $5.95
-                </p>
-              </div><!-- Menu Item -->
-
-            
-
-          <div class="tab-pane fade" id="menu-lunch">
-
-            <div class="tab-header text-center">
-              <p>Menu</p>
-              <h3><?php echo $categoria; ?></h3>
-            </div>
-
-            <div class="row gy-5">
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Magnam Tiste</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $5.95
-                </p>
-              </div><!-- Menu Item -->
-
-             
-          <div class="tab-pane fade" id="menu-dinner">
-
-            <div class="tab-header text-center">
-              <p>Menu</p>
-              <h3><?php echo $categoria; ?></h3>
-            </div>
-
-            <div class="row gy-5">
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Magnam Tiste</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $5.95
-                </p>
-              </div><!-- Menu Item -->
-
-          
-            </div>
-          </div><!-- End Dinner Menu Content -->
-
+                    </div>
+                </div>
         </div>
-
-      </div>
-    </section><!-- End Menu Section -->
+    <?php
+            }
+    ?>
+</section>

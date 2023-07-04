@@ -1176,30 +1176,31 @@ section {
   min-height: 500px;
   background-size: cover;
   background-position: center;
+
 }
 
-.book-a-table .reservation-form-bg {
+.book-a-table .rafaelFrm {
   background: rgba(55, 55, 63, 0.04);
 }
 
-.book-a-table .php-email-form {
+.book-a-table .rafaelFrm {
   padding: 40px;
 }
 
 @media (max-width: 575px) {
-  .book-a-table .php-email-form {
+  .book-a-table .rafaelFrm {
     padding: 20px;
   }
 }
 
-.book-a-table .php-email-form h3 {
+.book-a-table .rafaelFrm h3 {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.book-a-table .php-email-form h4 {
+.book-a-table .rafaelFrm h4 {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1207,7 +1208,7 @@ section {
   margin: 20px 0 0 0;
 }
 
-.book-a-table .php-email-form p {
+.book-a-table .rafaelFrm p {
   font-size: 14px;
   margin-bottom: 20px;
 }
@@ -1222,7 +1223,7 @@ section {
   font-weight: 600;
 }
 
-.book-a-table .php-email-form .sent-message {
+.book-a-table .rafaelFrm .sent-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -1265,11 +1266,11 @@ section {
   border-color: var(--color-primary);
 }
 
-.book-a-table .php-email-form input {
+.book-a-table .rafaelFrm input {
   padding: 12px 15px;
 }
 
-.book-a-table .php-email-form textarea {
+.book-a-table .rafaelFrm textarea {
   padding: 12px 15px;
 }
 
@@ -1282,7 +1283,7 @@ section {
   border-radius: 50px;
 }
 
-.book-a-table .php-email-form button[type=submit]:hover {
+.book-a-table .rafaelFrm button[type=submit]:hover {
   background: #ec2727;
 }
 
