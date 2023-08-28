@@ -1,1 +1,1 @@
-# Yummy - Estudantil Project
+# Yummy - Projeto Estudantil
